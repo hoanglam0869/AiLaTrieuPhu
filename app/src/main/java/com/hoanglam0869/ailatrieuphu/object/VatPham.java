@@ -7,15 +7,17 @@ public class VatPham {
     private int giaVatPham;
     private int slVatPham;
     private String loaiThe;
+    private int capThe;
     private String moTaVatPham;
 
-    public VatPham(int id, String tenVatPham, byte[] hinhVatPham, int giaVatPham, int slVatPham, String loaiThe, String moTaVatPham) {
+    public VatPham(int id, String tenVatPham, byte[] hinhVatPham, int giaVatPham, int slVatPham, String loaiThe, int capThe, String moTaVatPham) {
         this.id = id;
         this.tenVatPham = tenVatPham;
         this.hinhVatPham = hinhVatPham;
         this.giaVatPham = giaVatPham;
         this.slVatPham = slVatPham;
         this.loaiThe = loaiThe;
+        this.capThe = capThe;
         this.moTaVatPham = moTaVatPham;
     }
 
@@ -65,6 +67,14 @@ public class VatPham {
 
     public void setLoaiThe(String loaiThe) {
         this.loaiThe = loaiThe;
+    }
+
+    public int getCapThe() {
+        return capThe;
+    }
+
+    public void setCapThe(int capThe) {
+        this.capThe = capThe;
     }
 
     public String getMoTaVatPham() {

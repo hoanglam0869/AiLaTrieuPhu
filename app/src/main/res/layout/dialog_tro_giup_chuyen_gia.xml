@@ -7,9 +7,8 @@
 
     <LinearLayout
         android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_height="350dp"
         android:background="@drawable/bg_dialog"
-        android:gravity="center"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -21,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Trợ Giúp Chuyên Gia"
+                android:text="Chọn Chuyên Gia"
                 android:textColor="@color/tieudedialog"
                 android:textSize="20sp" />
 
@@ -35,29 +34,10 @@
                 app:tint="#fff" />
         </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/imageViewChuyenGia"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginTop="20dp" />
-
-        <TextView
+        <ListView
+            android:id="@+id/listViewChuyenGia"
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="Chuyên gia khuyên bạn nên chọn đáp án:"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <TextView
-            android:id="@+id/textViewDapAn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="A"
-            android:textColor="@color/mauchudao"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:layout_height="wrap_content"/>
     </LinearLayout>
 </LinearLayout>

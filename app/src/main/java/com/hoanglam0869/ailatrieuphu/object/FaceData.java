@@ -65,7 +65,7 @@ public class FaceData {
         cursor.moveToFirst();
         ArrayList<VatPham> arrVatPham = new ArrayList<>();
         do {
-            arrVatPham.add(new VatPham(cursor.getInt(0), cursor.getString(2), cursor.getBlob(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6), cursor.getString(7)));
+            arrVatPham.add(new VatPham(cursor.getInt(0), cursor.getString(2), cursor.getBlob(3), cursor.getInt(4), cursor.getInt(5), cursor.getString(6), cursor.getInt(7), cursor.getString(8)));
         } while (cursor.moveToNext());
         return arrVatPham;
     }

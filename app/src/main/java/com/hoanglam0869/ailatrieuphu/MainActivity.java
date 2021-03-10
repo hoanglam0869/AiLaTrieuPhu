@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCaNhan;
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCaiDat;
+import com.hoanglam0869.ailatrieuphu.dialog.DialogChuyenGia;
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCuaHang;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgLogo;
     float loaNhacNen, loaAmThanh;
     public static int tongKinhNghiem, tongTien;
-    public TextView txvTongTien;
+    public DialogCuaHang dialogCuaHang;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void cuahang(View view) {
-        new DialogCuaHang(MainActivity.this).show();
+        dialogCuaHang = new DialogCuaHang(MainActivity.this);
+        dialogCuaHang.show();
     }
 
     public static void SetVolume(float loaNhacNen) {

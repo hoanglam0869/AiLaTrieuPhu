@@ -26,25 +26,24 @@ import java.util.ArrayList;
 
 public class DialogCuaHang extends Dialog {
     ImageView imgDong;
-    ListView listView;
+    public TextView txvTongTien;
+    ListView lvVatPham;
     ArrayList<VatPham> vatPhamArrayList;
     VatPhamAdapter vatPhamAdapter;
-    MainActivity mainActivity;
 
     public DialogCuaHang(@NonNull Context context) {
         super(context);
         setContentView(R.layout.dialog_cua_hang);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-        mainActivity = (MainActivity) context;
         AnhXa();
-        mainActivity.txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
+        txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
         vatPhamArrayList = FaceData.vatpham((Activity) context, "tatca");
         vatPhamAdapter = new VatPhamAdapter(context, vatPhamArrayList);
-        listView.setAdapter(vatPhamAdapter);
+        lvVatPham.setAdapter(vatPhamAdapter);
 
         SetClick();
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvVatPham.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String noiDung = vatPhamArrayList.get(position).getMoTaVatPham();
@@ -64,8 +63,8 @@ public class DialogCuaHang extends Dialog {
 
     private void AnhXa() {
         imgDong = findViewById(R.id.imageViewDongCuaHang);
-        mainActivity.txvTongTien = findViewById(R.id.textViewTongTien);
-        listView = findViewById(R.id.listViewTroGiup);
+        txvTongTien = findViewById(R.id.textViewTongTien);
+        lvVatPham = findViewById(R.id.listViewTroGiup);
         vatPhamArrayList = new ArrayList<>();
     }
 }

@@ -1,6 +1,7 @@
 package com.hoanglam0869.ailatrieuphu.adapter;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.hoanglam0869.ailatrieuphu.ChoiActivity;
 import com.hoanglam0869.ailatrieuphu.Database;
 import com.hoanglam0869.ailatrieuphu.MainActivity;
 import com.hoanglam0869.ailatrieuphu.R;
@@ -104,7 +106,7 @@ public class VatPhamAdapter extends BaseAdapter {
 
                     MainActivity.tongTien -= vatPham.getGiaVatPham();
                     MainActivity mainActivity = (MainActivity) context;
-                    mainActivity.txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
+                    mainActivity.dialogCuaHang.txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
 
                     SharedPreferences sp = context.getSharedPreferences("caidat", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();
