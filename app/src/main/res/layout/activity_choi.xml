@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChoiActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center"
+                        android:onClick="dungcuocchoi"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/exit"
+                            app:tint="#fff" />
+
+                        <TextView
+                            android:id="@+id/textViewThuong"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="200 N"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3">
+
+                        <ProgressBar
+                            android:id="@+id/progressBarThoiGian"
+                            style="@style/CircularProgressBar"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:max="30"
+                            android:progress="18" />
+
+                        <TextView
+                            android:id="@+id/textViewThoiGian"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:textColor="@color/mauchudao"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn"
+                        android:onClick="tienthuong"
+                        android:padding="15dp"
+                        android:src="@drawable/dollar" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/troGiup"
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tro_giup"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:onClick="trogiup5050"
+                            android:src="@drawable/trogiup5050" />
+
+                        <TextView
+                            android:id="@+id/txvSLTroGiup5050"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_so_luong"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF" />
+
+                        <ImageView
+                            android:id="@+id/imgXoaTroGiup5050"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:src="@drawable/close"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tro_giup"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:onClick="trogiupkhangia"
+                            android:src="@drawable/trogiupkhangia"
+                            app:tint="#fff" />
+
+                        <TextView
+                            android:id="@+id/txvSLTroGiupKhanGia"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_so_luong"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF" />
+
+                        <ImageView
+                            android:id="@+id/imgXoaTroGiupKhanGia"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:src="@drawable/close"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tro_giup"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:onClick="trogiupdoicauhoi"
+                            android:src="@drawable/trogiupdoicauhoi"
+                            app:tint="#fff" />
+
+                        <TextView
+                            android:id="@+id/txvSLTroGiupDoiCauHoi"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_so_luong"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF" />
+
+                        <ImageView
+                            android:id="@+id/imgXoaTroGiupDoiCauHoi"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:src="@drawable/close"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/troGiupThu4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_tro_giup"
+                        android:gravity="center"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:onClick="trogiupchuyengia"
+                            android:src="@drawable/trogiupchuyengia"
+                            app:tint="#fff" />
+
+                        <TextView
+                            android:id="@+id/txvSLTroGiupChuyenGia"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/bg_so_luong"
+                            android:gravity="center"
+                            android:textColor="#FFFFFF" />
+
+                        <ImageView
+                            android:id="@+id/imgXoaTroGiupChuyenGia"
+                            android:layout_width="match_parent"
+                            android:layout_height="45dp"
+                            android:src="@drawable/close"
+                            android:visibility="gone" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp">
+
+                    <TextView
+                        android:id="@+id/txvCauHoi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="-15dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="-15dp"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center"
+                        android:padding="20dp"
+                        android:textColor="#FFFFFF"
+                        android:textSize="18sp" />
+
+                    <LinearLayout
+                        android:layout_width="200dp"
+                        android:layout_height="60dp"
+                        android:layout_centerHorizontal="true"
+                        android:background="@drawable/bg_cau_chon"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textViewTienThuong"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="$1000000"
+                            android:textColor="#39270f"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/textViewViTriCauHoi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Câu 15"
+                            android:textColor="#39270f"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:weightSum="4">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_weight="1">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_centerInParent="true"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txvCauTL1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="35dp"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="A:"
+                        android:textColor="@color/tieudedialog"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_centerInParent="true"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txvCauTL2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="35dp"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="B:"
+                        android:textColor="@color/tieudedialog"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_centerInParent="true"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txvCauTL3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="35dp"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="C:"
+                        android:textColor="@color/tieudedialog"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_centerInParent="true"
+                        android:background="#FFFFFF" />
+
+                    <TextView
+                        android:id="@+id/txvCauTL4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/bg_btn"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="35dp"
+                        android:textColor="#fff"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="center_vertical"
+                        android:text="D:"
+                        android:textColor="@color/tieudedialog"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:layout_marginLeft="-64dp"
+        android:background="@drawable/bg"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:onClick="trolai"
+            android:src="@drawable/undo"
+            app:tint="#fff" />
+
+        <ListView
+            android:id="@+id/lsvTienThuong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:divider="#9C27B0" />
+    </LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
