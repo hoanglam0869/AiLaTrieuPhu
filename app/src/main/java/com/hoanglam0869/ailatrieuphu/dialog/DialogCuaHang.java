@@ -26,18 +26,19 @@ import java.util.ArrayList;
 
 public class DialogCuaHang extends Dialog {
     ImageView imgDong;
-    TextView txvTongTien;
     ListView listView;
     ArrayList<VatPham> vatPhamArrayList;
     VatPhamAdapter vatPhamAdapter;
+    MainActivity mainActivity;
 
     public DialogCuaHang(@NonNull Context context) {
         super(context);
         setContentView(R.layout.dialog_cua_hang);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+        mainActivity = (MainActivity) context;
         AnhXa();
-        txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
+        mainActivity.txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
         vatPhamArrayList = FaceData.vatpham((Activity) context, "tatca");
         vatPhamAdapter = new VatPhamAdapter(context, vatPhamArrayList);
         listView.setAdapter(vatPhamAdapter);
@@ -61,13 +62,9 @@ public class DialogCuaHang extends Dialog {
         });
     }
 
-    public void SetTongTien() {
-        txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
-    }
-
     private void AnhXa() {
         imgDong = findViewById(R.id.imageViewDongCuaHang);
-        txvTongTien = findViewById(R.id.textViewTongTien);
+        mainActivity.txvTongTien = findViewById(R.id.textViewTongTien);
         listView = findViewById(R.id.listViewTroGiup);
         vatPhamArrayList = new ArrayList<>();
     }

@@ -103,8 +103,8 @@ public class VatPhamAdapter extends BaseAdapter {
                     database.update("vatpham", contentValues, "id=?", new String[]{(position + 1) + ""});
 
                     MainActivity.tongTien -= vatPham.getGiaVatPham();
-                    DialogCuaHang dialogCuaHang = new DialogCuaHang(context);
-                    dialogCuaHang.SetTongTien();
+                    MainActivity mainActivity = (MainActivity) context;
+                    mainActivity.txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));
 
                     SharedPreferences sp = context.getSharedPreferences("caidat", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = sp.edit();

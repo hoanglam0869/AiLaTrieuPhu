@@ -1,6 +1,5 @@
 package com.hoanglam0869.ailatrieuphu;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
@@ -9,7 +8,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,10 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCaNhan;
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCaiDat;
 import com.hoanglam0869.ailatrieuphu.dialog.DialogCuaHang;
-import com.hoanglam0869.ailatrieuphu.object.FaceData;
-
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgLogo;
     float loaNhacNen, loaAmThanh;
     public static int tongKinhNghiem, tongTien;
+    public TextView txvTongTien;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

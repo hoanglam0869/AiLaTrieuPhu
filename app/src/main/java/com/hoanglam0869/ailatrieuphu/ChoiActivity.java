@@ -552,7 +552,7 @@ public class ChoiActivity extends AppCompatActivity {
                         break;
                     }
                 }
-                new CountDownTimer(2000, 100) {
+                new CountDownTimer(4000, 100) {
                     @Override
                     public void onTick(long millisUntilFinished) {
 

@@ -3,7 +3,12 @@
     android:shape="rectangle">
     <stroke
         android:width="@dimen/DialogStrokeWidth"
-        android:color="@color/DialogStroke" />
+        android:color="#c67cf3" />
     <corners android:radius="@dimen/DialogCornerRadius" />
-    <solid android:color="#2b1462" />
+    <gradient
+        android:angle="90"
+        android:centerColor="#432273"
+        android:centerY="70"
+        android:endColor="#7e29c6"
+        android:startColor="#7e29c6" />
 </shape>

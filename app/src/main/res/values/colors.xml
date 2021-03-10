@@ -11,7 +11,7 @@
     <color name="background">#6A127A</color>
     <color name="mauchudao">#FFEB3B</color>
     <color name="tieudedialog">#FACA78</color>
-    <color name="strokedialog">#AE73C6</color>
+    <color name="DialogStroke">#AE73C6</color>
 
     <color name="red">#F6402C</color>
     <color name="pink">#EB1460</color>
