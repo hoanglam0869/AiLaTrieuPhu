@@ -30,8 +30,6 @@ public class DialogChuyenGia extends Dialog {
     ListView lvChuyenGia;
     ArrayList<VatPham> vatPhamArrayList;
     ChuyenGiaAdapter chuyenGiaAdapter;
-    TextView txvChuyenGiaTraLoi;
-    Button btnXacNhan;
 
     public DialogChuyenGia(@NonNull Context context, int vtD) {
         super(context);
@@ -39,6 +37,7 @@ public class DialogChuyenGia extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
         AnhXa();
+        SetUp();
         vatPhamArrayList = FaceData.vatpham((Activity) context, "thechuyengia");
         chuyenGiaAdapter = new ChuyenGiaAdapter(context, vatPhamArrayList);
         lvChuyenGia.setAdapter(chuyenGiaAdapter);
@@ -52,8 +51,8 @@ public class DialogChuyenGia extends Dialog {
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
                 imgHinhChuyenGia = dialog.findViewById(R.id.imageViewHinhChuyenGia);
-                txvChuyenGiaTraLoi = dialog.findViewById(R.id.textViewChuyenGiaTraLoi);
-                btnXacNhan = dialog.findViewById(R.id.buttonXacNhan);
+                TextView txvChuyenGiaTraLoi = dialog.findViewById(R.id.textViewChuyenGiaTraLoi);
+                Button btnXacNhan = dialog.findViewById(R.id.buttonXacNhan);
 
                 VatPham vatPham = vatPhamArrayList.get(position);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(vatPham.getHinhVatPham(), 0, vatPham.getHinhVatPham().length);
@@ -61,23 +60,19 @@ public class DialogChuyenGia extends Dialog {
 
                 Random r = new Random();
                 int tiLe = r.nextInt(100);
-                if (tiLe <= chuyenGiaAdapter.TiLeDung(vatPham) - 1) {
-                    switch (vtD) {
-                        case 0:
-                            txvChuyenGiaTraLoi.setText("A");
+                int tiLeTraLoiDung = chuyenGiaAdapter.TiLeDung(vatPham);
+                String[] dapAn = {"A", "B", "C", "D"};
+                if (tiLe <= tiLeTraLoiDung - 1) {
+                    txvChuyenGiaTraLoi.setText(dapAn[vtD]);
+                } else {
+                    while (true) {
+                        int vtS = r.nextInt(4);
+                        if (vtS != vtD) {
+                            txvChuyenGiaTraLoi.setText(dapAn[vtS]);
                             break;
-                        case 1:
-                            txvChuyenGiaTraLoi.setText("B");
-                            break;
-                        case 2:
-                            txvChuyenGiaTraLoi.setText("C");
-                            break;
-                        case 3:
-                            txvChuyenGiaTraLoi.setText("D");
-                            break;
+                        }
                     }
                 }
-
 
                 btnXacNhan.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -88,7 +83,6 @@ public class DialogChuyenGia extends Dialog {
                 dialog.show();
             }
         });
-        SetUp();
     }
 
     private void SetUp() {
