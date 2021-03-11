@@ -46,6 +46,8 @@ public class ChuyenGiaAdapter extends BaseAdapter {
         LinearLayout suDungChuyenGia;
     }
 
+    int tiLeTraLoiDung;
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
@@ -66,20 +68,28 @@ public class ChuyenGiaAdapter extends BaseAdapter {
         holder.imgChuyenGia.setImageBitmap(bitmap);
 
         holder.txvTenChuyenGia.setText(vatPham.getTenVatPham());
-        int tiLeTraLoiDung;
-        if (vatPham.getLoaiThe().equals("A")) {
-            tiLeTraLoiDung = 85 + vatPham.getCapThe() - 1;
-        } else if (vatPham.getLoaiThe().equals("B")) {
-            tiLeTraLoiDung = 80 + vatPham.getCapThe() - 1;
-        } else if (vatPham.getLoaiThe().equals("C")) {
-            tiLeTraLoiDung = 75 + vatPham.getCapThe() - 1;
-        } else {
-            tiLeTraLoiDung = 70 + vatPham.getCapThe() - 1;
-        }
-        String noiDung = "Tỉ lệ đúng: " + tiLeTraLoiDung + "%";
+        String noiDung = "Tỉ lệ đúng: " + TiLeDung(vatPham) + "%";
         holder.txvTiLeTraLoiDung.setText(noiDung);
 
         holder.suDungChuyenGia.setVisibility(View.INVISIBLE);
         return convertView;
+    }
+
+    public int TiLeDung(VatPham vatPham) {
+        switch (vatPham.getLoaiThe()) {
+            case "A":
+                tiLeTraLoiDung = 85 + vatPham.getCapThe() - 1;
+                break;
+            case "B":
+                tiLeTraLoiDung = 80 + vatPham.getCapThe() - 1;
+                break;
+            case "C":
+                tiLeTraLoiDung = 75 + vatPham.getCapThe() - 1;
+                break;
+            case "D":
+                tiLeTraLoiDung = 70 + vatPham.getCapThe() - 1;
+                break;
+        }
+        return tiLeTraLoiDung;
     }
 }
