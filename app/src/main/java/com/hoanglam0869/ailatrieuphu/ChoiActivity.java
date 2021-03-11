@@ -527,7 +527,7 @@ public class ChoiActivity extends AppCompatActivity {
         mpTroGiupChuyenGia.release();
         Intent intent = new Intent(ChoiActivity.this, KetQuaActivity.class);
         intent.putExtra("ketqua", ketqua);
-        intent.putExtra("kinhnghiem", viTriCauHoi);
+        intent.putExtra("vitricauhoi", viTriCauHoi);
         intent.putExtra("tien", tien);
         startActivity(intent);
     }

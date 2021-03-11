@@ -13,9 +13,9 @@ import java.text.DecimalFormat;
 
 public class KetQuaActivity extends AppCompatActivity {
 
-    TextView txvKetQua, txvTien;
+    TextView txvKetQua, txvTien, txvSLCauDung, txvEXPNhan;
     String ketqua;
-    int kinhNghiem, tien;
+    int viTriCauHoi, kinhNghiem, tien;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,17 +48,30 @@ public class KetQuaActivity extends AppCompatActivity {
         txvKetQua.setText(noiDung);
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         txvTien.setText(decimalFormat.format(tien));
+        noiDung = "Số câu đúng: " + viTriCauHoi;
+        txvSLCauDung.setText(noiDung);
+        noiDung = "Kinh nghiệm nhận được: " + kinhNghiem + " EXP";
+        txvEXPNhan.setText(noiDung);
     }
 
     private void LayDuLieu() {
         ketqua = getIntent().getStringExtra("ketqua");
-        kinhNghiem = getIntent().getIntExtra("kinhnghiem", 0);
+        viTriCauHoi = getIntent().getIntExtra("vitricauhoi", 0);
         tien = getIntent().getIntExtra("tien", 0);
+        if (viTriCauHoi > 10) {
+            kinhNghiem = viTriCauHoi * 3 - 15;
+        } else if (viTriCauHoi > 5) {
+            kinhNghiem = viTriCauHoi * 2 - 5;
+        } else {
+            kinhNghiem = viTriCauHoi;
+        }
     }
 
     private void AnhXa() {
         txvKetQua = findViewById(R.id.textViewKetQua);
         txvTien = findViewById(R.id.textViewTien);
+        txvSLCauDung = findViewById(R.id.textViewSLCauDung);
+        txvEXPNhan = findViewById(R.id.textViewEXPNhan);
     }
 
     @Override

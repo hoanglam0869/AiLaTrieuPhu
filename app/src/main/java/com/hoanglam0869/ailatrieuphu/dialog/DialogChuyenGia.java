@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class DialogChuyenGia extends Dialog {
-    ImageView imgDong, imgHinhChuyenGia;
+    ImageView imgDong;
     ListView lvChuyenGia;
     ArrayList<VatPham> vatPhamArrayList;
     ChuyenGiaAdapter chuyenGiaAdapter;
@@ -50,11 +50,13 @@ public class DialogChuyenGia extends Dialog {
                 dialog.setContentView(R.layout.dialog_chuyen_gia_tra_loi);
                 dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
-                imgHinhChuyenGia = dialog.findViewById(R.id.imageViewHinhChuyenGia);
+                TextView txvTenChuyenGia = dialog.findViewById(R.id.textViewTenChuyenGia);
+                ImageView imgHinhChuyenGia = dialog.findViewById(R.id.imageViewHinhChuyenGia);
                 TextView txvChuyenGiaTraLoi = dialog.findViewById(R.id.textViewChuyenGiaTraLoi);
                 Button btnXacNhan = dialog.findViewById(R.id.buttonXacNhan);
 
                 VatPham vatPham = vatPhamArrayList.get(position);
+                txvTenChuyenGia.setText(vatPham.getTenVatPham());
                 Bitmap bitmap = BitmapFactory.decodeByteArray(vatPham.getHinhVatPham(), 0, vatPham.getHinhVatPham().length);
                 imgHinhChuyenGia.setImageBitmap(bitmap);
 
@@ -92,10 +94,6 @@ public class DialogChuyenGia extends Dialog {
                 dismiss();
             }
         });
-    }
-
-    private void DapAnDung() {
-
     }
 
     private void AnhXa() {
