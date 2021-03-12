@@ -26,6 +26,7 @@ public class DialogDungCuocChoi extends Dialog {
         super(context);
         setContentView(R.layout.dialog_dung_cuoc_choi);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         imgDong.setOnClickListener(new View.OnClickListener() {

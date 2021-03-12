@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/DialogWidth"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_dialog"
@@ -25,15 +24,6 @@
                 android:textAllCaps="true"
                 android:textColor="@color/tieudedialog"
                 android:textSize="20sp" />
-
-            <ImageView
-                android:id="@+id/imageViewDongCaiDat"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentRight="true"
-                android:layout_margin="9dp"
-                android:src="@drawable/close"
-                app:tint="#fff" />
         </RelativeLayout>
 
         <LinearLayout

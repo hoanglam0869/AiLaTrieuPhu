@@ -207,7 +207,7 @@ public class ChoiActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
-                        if (isDungCuocChoi) {
+                        if (dungCuocChoi) {
                             XemKetQua("dungcuocchoi");
                             return;
                         }
@@ -486,7 +486,7 @@ public class ChoiActivity extends AppCompatActivity {
         if (isChecking) {
             return;
         }
-        isDungCuocChoi = true;
+        dungCuocChoi = true;
         isChecking = true;
         DungThoiGian();
         new DialogDungCuocChoi(this, tien).show();
@@ -588,7 +588,7 @@ public class ChoiActivity extends AppCompatActivity {
     }
 
     MediaPlayer mpNhacNen, mpChon, mpDung, mpSai, mpTroGiup5050, mpTroGiupKhanGia, mpTroGiupDoiCauHoi, mpTroGiupThu4, mpTroGiupChuyenGia;
-    boolean isChecking = false, hoTro5050 = true, doiCauHoi = true, isDungCuocChoi = false;
+    boolean isChecking = false, hoTro5050 = true, doiCauHoi = true, dungCuocChoi = false;
     CountDownTimer cdtThoiGian;
     ProgressBar pbgThoiGian;
     TextView txvSL5050, txvSLKhanGia, txvSLDoiCauHoi, txvSLChuyenGia;

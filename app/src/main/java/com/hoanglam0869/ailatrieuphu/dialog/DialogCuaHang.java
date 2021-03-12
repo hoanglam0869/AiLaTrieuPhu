@@ -35,6 +35,7 @@ public class DialogCuaHang extends Dialog {
         super(context);
         setContentView(R.layout.dialog_cua_hang);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         txvTongTien.setText(FaceData.FormatTienThuong(MainActivity.tongTien));

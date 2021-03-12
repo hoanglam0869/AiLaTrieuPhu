@@ -32,6 +32,7 @@ public class DialogKhanGiaTraLoi extends Dialog {
         super(context);
         setContentView(R.layout.dialog_tro_giup_khan_gia);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         SetUp();

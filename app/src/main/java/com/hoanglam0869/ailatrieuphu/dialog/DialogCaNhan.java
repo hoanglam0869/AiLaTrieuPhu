@@ -29,6 +29,7 @@ public class DialogCaNhan extends Dialog {
         super(context);
         setContentView(R.layout.dialog_ca_nhan);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         TaoMang();

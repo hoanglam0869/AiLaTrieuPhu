@@ -20,6 +20,7 @@ public class DialogInfoVatPham extends Dialog {
         super(context);
         setContentView(R.layout.dialog_info_vat_pham);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         txvThongTinVatPham.setText(noiDung);

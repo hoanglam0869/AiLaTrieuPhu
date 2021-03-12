@@ -26,6 +26,7 @@ public class DialogCaiDat extends Dialog {
         super(context);
         setContentView(R.layout.dialog_cai_dat);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         imgDong = findViewById(R.id.imageViewDongCaiDat);
         sbNhacNen = findViewById(R.id.seekBarNhacNen);

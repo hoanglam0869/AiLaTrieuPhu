@@ -35,6 +35,7 @@ public class DialogChuyenGia extends Dialog {
         super(context);
         setContentView(R.layout.dialog_tro_giup_chuyen_gia);
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        setCanceledOnTouchOutside(false);
 
         AnhXa();
         SetUp();
@@ -99,6 +100,5 @@ public class DialogChuyenGia extends Dialog {
     private void AnhXa() {
         imgDong = findViewById(R.id.imageViewDongTroGiupChuyenGia);
         lvChuyenGia = findViewById(R.id.listViewChuyenGia);
-
     }
 }

@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="350dp"
+        android:layout_width="@dimen/DialogWidth"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/bg_dialog"
